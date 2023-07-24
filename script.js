@@ -41,6 +41,7 @@ function saveChanges() {
     document.getElementById(category).style.backgroundColor = modified.has(category) ? "red" : "blue";
 
     document.getElementById("myModal").style.display = "none";
+    
 }
 
 function generateReport() {
@@ -74,5 +75,5 @@ function copyToClipboard() {
     let outputTextarea = document.getElementById("output");
     outputTextarea.select();
     document.execCommand("copy");
-    alert("Output text has been copied to clipboard!");
+    alert("Copied!");
 }
