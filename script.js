@@ -63,12 +63,6 @@ window.onclick = function(event) {
     }
 }
 
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
-
-// Add event listener to the close button
-document.getElementById("closeModalButton").addEventListener("click", closeModal);
 
 // Function to copy output to clipboard
 function copyToClipboard() {
@@ -77,3 +71,48 @@ function copyToClipboard() {
     document.execCommand("copy");
     alert("Copied!");
 }
+
+async function generateChatGPTOutput() {
+    // Replace 'YOUR_API_KEY' with your actual OpenAI GPT-3 API key
+    const apiKey = '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';
+    const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  
+    const examText = document.getElementById('output').value;
+    const conversation = [
+      {
+        role: 'user',
+        content: examText,
+      },
+      {
+        role: 'assistant',
+        content: 'Please fill out the paragraph below, to be used as part of the Assessment section in a Neurology SOAP clinical documentation note. Using the provided neurologic exam, I want you to fill out the following paragraph, replacing the asterisks with relevant text. You should only use the abnormal exam findings to find a neurologic localization. Examples of neurologic localization include tracts, parts of the brain (ie, left temporal lobe, left precentral gyrus), brainstem (eg, right ventromedial pons), spinal cord and roots, neuromuscular junction, and peripheral nerves amongst others. please state specific locations for localizations. ASSESSMENT: Neurologic exam notable for ***. Neurologic localization includes ***.',
+      },
+    ];
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: 'gpt-4',
+          messages: conversation,
+          temperature: 0.5,
+          max_tokens: 250,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch response from the GPT-3 API.');
+      }
+  
+      const data = await response.json();
+      const chatGPTOutput = data.choices[0].message['content'];
+      document.getElementById('output').value = chatGPTOutput;
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  
