@@ -8,30 +8,31 @@
     <div class="flex flex-col items-center">
         <h1 class="text-2xl mb-4">Neurologic Exam Template</h1>
         <div id="examFindings" class="space-y-2">
-            <button id="mentalStatus" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('mentalStatus')">Mental Status</button>
-            <button id="cranialNerves" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('cranialNerves')">Cranial Nerves</button>
-            <button id="motor" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('motor')">Motor</button>
-            <button id="sensory" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('sensory')">Sensory</button>
-            <button id="reflexes" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('reflexes')">Reflexes</button>
-            <button id="cerebellar" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('cerebellar')">Cerebellar</button>
-            <button id="gait" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('gait')">Gait</button><br>
+            <!-- <button id="mentalStatus" class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded" onclick="getInput('mentalStatus')">Mental Status</button> -->
+            <button id="mentalStatus" class="button button-blue" onclick="getInput('mentalStatus')">Mental Status</button>
+            <button id="cranialNerves" class="button button-blue" onclick="getInput('cranialNerves')">Cranial Nerves</button>
+            <button id="motor" class="button button-blue" onclick="getInput('motor')">Motor</button>
+            <button id="sensory" class="button button-blue" onclick="getInput('sensory')">Sensory</button>
+            <button id="reflexes" class="button button-blue" onclick="getInput('reflexes')">Reflexes</button>
+            <button id="cerebellar" class="button button-blue" onclick="getInput('cerebellar')">Cerebellar</button>
+            <button id="gait" class="button button-blue" onclick="getInput('gait')">Gait</button><br>
         </div>
-        <button id="generate" class="bg-green-600 hover:bg-green-700 font-light text-white py-2 px-4 rounded mt-4" onclick="generateReport()">Generate Report</button>
-        <button class="bg-purple-500 hover:bg-purple-700 text-white font-light py-2 px-4 rounded mt-4" onclick="generateChatGPTOutput()">Generate ChatGPT Output</button>
+        <button id="generate" class="button button-green rounded mt-4" onclick="generateReport()">Generate Report</button>
+        <button class="button button-purple rounded mt-4" onclick="generateChatGPTOutput()">Generate ChatGPT Output</button>
 
     </div>
    
     
    <h2 class="text-lg  mt-4">Neurologic Exam Text:</h2>
     <textarea id="output" class="mt-2 w-full h-64 p-2 border rounded bg-gray-700 text-white" rows="10" cols="50"></textarea>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button class="button button-light-blue rounded mt-4" onclick="copyToClipboard()">Copy to Clipboard</button>
     <script src="script.js"></script>
     <div id="myModal" class="modal">
-        <div class="modal-content p-4 bg-gray-800 text-gray-800">
+        <div class="modal-content p-4 bg-gray-800 text-gray-700">
             <!-- <button id="closeModalButton" class="close-button">&times;</button> -->
-            <h2 class="text-lg font-bold mt-4 mb-2">Edit the abnormal findings.</h2>
+            <h2 class="text-lg mt-4 mb-2 text-gray-900 font-semibold">Edit the abnormal findings.</h2>
             <div id="modalContent"></div>
-            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-light py-2 px-4 rounded mt-4" onclick="saveChanges()">Save changes</button>
+            <button class="button button-green rounded mt-4" onclick="saveChanges()">Save changes</button>
         </div>
     
     

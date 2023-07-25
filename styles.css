@@ -1,4 +1,7 @@
-
+examFindings.button:hover {
+    background-color: #33905a;
+    transition: .15s ease-in-out;
+}
 
 .btn-blue {
     background-color: #1d69c6;
@@ -45,10 +48,12 @@
 
 .modal-content {
     background-color: #fefefe;
+    opacity: 0.95;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
     width: 80%;
+    border-radius: 0.75rem;
 }
 
 .close {
@@ -64,3 +69,81 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Test Scripts */
+/* styles.css */
+
+/* Center the content vertically and horizontally */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this value to your preference */
+  }
+  
+  /* Style the buttons */
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 300;
+    margin-inline: 1px;
+  }
+  
+  .button-blue {
+    /* background-color: #4a86e8;  */
+   background-color: #334155;
+    color: white;
+  }
+  
+  .button-blue:hover {
+    /* background-color: #0052cc;  */
+    background-color: #1d4ed8;
+    transition: .3s ease-in-out;
+  }
+
+  .button-light-blue {
+    background-color: #4a86e8; 
+    color: white;
+  }
+
+  .button-light-blue:hover {
+    background-color: #0052cc; 
+    transition: .3s ease-in-out;
+  }
+
+  
+  .button-green {
+    background-color: #34aa44; /* Green color similar to the reference style */
+    color: white;
+  }
+  
+  .button-green:hover {
+    background-color: #007b33; /* Darker green color on hover */
+    transition: .3s ease-in-out;
+  }
+  
+  .button-purple {
+    background-color: #3700ebb6; /* Darker purple color on hover */
+    color: white;
+  }
+  
+  .button-purple:hover {
+    background-color: #3c00fff4; /* Darker purple color on hover */
+    transition: .3s ease-in-out;
+  }
+  
+  /* Style the textarea */
+  .textarea {
+    width: 80%;
+    height: 250px;
+    resize: vertical;
+    background-color: #f2f2f2; /* Light gray background similar to the reference style */
+    color: #333; /* Dark text color */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+  }
+  

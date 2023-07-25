@@ -74,7 +74,7 @@ function copyToClipboard() {
 
 async function generateChatGPTOutput() {
     // Replace 'YOUR_API_KEY' with your actual OpenAI GPT-3 API key
-    const apiKey = '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';
+    const apiKey = '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';
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
   
     const examText = document.getElementById('output').value;
@@ -85,7 +85,7 @@ async function generateChatGPTOutput() {
       },
       {
         role: 'assistant',
-        content: 'Please fill out the paragraph below, to be used as part of the Assessment section in a Neurology SOAP clinical documentation note. Using the provided neurologic exam, I want you to fill out the following paragraph, replacing the asterisks with relevant text. You should only use the abnormal exam findings to find a neurologic localization. Examples of neurologic localization include tracts, parts of the brain (ie, left temporal lobe, left precentral gyrus), brainstem (eg, right ventromedial pons), spinal cord and roots, neuromuscular junction, and peripheral nerves amongst others. please state specific locations for localizations. ASSESSMENT: Neurologic exam notable for ***. Localization includes ***.',
+        content: 'Please fill out the paragraph below, to be used as part of the Assessment section in a Neurology SOAP clinical documentation note. I want you to replace the asterisks with relevant text based on my exam. You should only use the abnormal exam findings to find a neurologic localization. Examples of neurologic localization include tracts, parts of the brain (ie, left temporal lobe, left precentral gyrus), brainstem (eg, right ventromedial pons), spinal cord and roots, neuromuscular junction, and peripheral nerves amongst others. please state specific locations for localizations. ASSESSMENT: Neurologic exam notable for ***. Localization includes the ***.',
       },
     ];
   
@@ -97,9 +97,9 @@ async function generateChatGPTOutput() {
           'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'gpt-4',
+          model: 'gpt-3.5-turbo-16k',
           messages: conversation,
-          temperature: 0.5,
+          temperature: 0.6,
           max_tokens: 150,
         }),
       });
