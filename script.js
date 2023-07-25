@@ -74,7 +74,7 @@ function copyToClipboard() {
 
 async function generateChatGPTOutput() {
     // Replace 'YOUR_API_KEY' with your actual OpenAI GPT-3 API key
-    const apiKey = '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';
+    const apiKey = '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';
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
   
     const examText = document.getElementById('output').value;
@@ -85,7 +85,7 @@ async function generateChatGPTOutput() {
       },
       {
         role: 'assistant',
-        content: 'Please fill out the paragraph below, to be used as part of the Assessment section in a Neurology SOAP clinical documentation note. Using the provided neurologic exam, I want you to fill out the following paragraph, replacing the asterisks with relevant text. You should only use the abnormal exam findings to find a neurologic localization. Examples of neurologic localization include tracts, parts of the brain (ie, left temporal lobe, left precentral gyrus), brainstem (eg, right ventromedial pons), spinal cord and roots, neuromuscular junction, and peripheral nerves amongst others. please state specific locations for localizations. ASSESSMENT: Neurologic exam notable for ***. Neurologic localization includes ***.',
+        content: 'Please fill out the paragraph below, to be used as part of the Assessment section in a Neurology SOAP clinical documentation note. Using the provided neurologic exam, I want you to fill out the following paragraph, replacing the asterisks with relevant text. You should only use the abnormal exam findings to find a neurologic localization. Examples of neurologic localization include tracts, parts of the brain (ie, left temporal lobe, left precentral gyrus), brainstem (eg, right ventromedial pons), spinal cord and roots, neuromuscular junction, and peripheral nerves amongst others. please state specific locations for localizations. ASSESSMENT: Neurologic exam notable for ***. Localization includes ***.',
       },
     ];
   
@@ -100,7 +100,7 @@ async function generateChatGPTOutput() {
           model: 'gpt-4',
           messages: conversation,
           temperature: 0.5,
-          max_tokens: 250,
+          max_tokens: 150,
         }),
       });
   
